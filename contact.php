@@ -10,6 +10,7 @@
   	unset($_SESSION['username']);
   	header("location: login.php");
   }*/
+
 ?>
 
 
@@ -92,8 +93,8 @@
 
             <!-- logged in user information -->
             <?php  if (isset($_SESSION['username'])) : ?>
-            <p style="color: white;font-size:15px;">Welcome <strong><?php echo $_SESSION['username']; ?></strong> &nbsp &nbsp <a href="index.php?logout='1'"
-                    style="color: red;"> logout</a></p>
+            <p style="color: white;font-size:15px;">Welcome <strong><?php echo $_SESSION['username']; ?></strong> &nbsp
+                &nbsp <a href="index.php?logout='1'" style="color: red;"> logout</a></p>
 
             <?php endif ?>
         </div>
@@ -112,14 +113,13 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <div class="home">
-		<div class="home_background_container prlx_parent">
-			<div class="home_background prlx" style="background-image:url(images/5.jpg)"></div>
-		</div>
-		<div class="home_content">
-			<h1>Contact</h1>
-		</div>
-	</div>
-
+        <div class="home_background_container prlx_parent">
+            <div class="home_background prlx" style="background-image:url(images/5.jpg)"></div>
+        </div>
+        <div class="home_content">
+            <h1>Contact</h1>
+        </div>
+    </div>
 
 
 
@@ -134,16 +134,24 @@
                         <div class="contact_title">Get in touch</div>
 
                         <div class="contact_form_container">
-                            <form action="post">
+                            <form method="post" action="ContactProcess.php">
+
+
                                 <input id="contact_form_name" class="input_field contact_form_name" type="text"
-                                    placeholder="Name" required="required" data-error="Name is required.">
-                                <input id="contact_form_email" class="input_field contact_form_email" type="email"
-                                    placeholder="E-mail" required="required" data-error="Valid email is required.">
-                                <textarea id="contact_form_message" class="text_field contact_form_message"
+                                    name="name" placeholder="Name" required="required" data-error="Name is required.">
+
+                                <input id="contact_form_email" class="input_field contact_form_email" type="text"
+                                    name="email" placeholder="Email" required="required"
+                                    data-error="Email is required.">
+
+                                <textarea id="contact_form_message" class="text_field contact_form_message" type="text"
                                     name="message" placeholder="Message" required="required"
-                                    data-error="Please, write us a message."></textarea>
-                                <button id="contact_send_btn" type="button" class="contact_send_btn trans_200"
-                                    value="Submit">send message</button>
+                                    data-error="Message is required."></textarea>
+
+                                <button id="contact_send_btn" name="contact" type="submit"
+                                    class="contact_send_btn trans_200" value="Submit">send message</button>
+
+
                             </form>
                         </div>
                     </div>
@@ -187,7 +195,7 @@
 
             <!-- Google Map -->
 
-           
+
 
         </div>
     </div>

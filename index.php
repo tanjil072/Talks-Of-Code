@@ -330,7 +330,7 @@
                             <p class="register_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla,
                                 vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.
                                 Aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempo.</p>
-                            <div class="button button_1 register_button mx-auto trans_200"><a href="#">Register now</a>
+                            <div class="button button_1 register_button mx-auto trans_200"><a href="register.php">Register now</a>
                             </div>
                         </div>
                     </div>
