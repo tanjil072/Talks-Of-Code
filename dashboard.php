@@ -4,10 +4,230 @@
         <meta name="viewprot" content="width=device-width,initial-scale=1.0">
         <meta charset="utf-8">
         <title>talksofcode</title>
-        <link rel="stylesheet" href="CSS/styleDashboard.css">
+        <!-- <link rel="stylesheet" href="CSS/styleDashboard.css"> -->
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <style>
+            html,body{
+                height: 100%;
+            }
+            *{
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                font-family: tahoma;
+                line-height: 1.7;
+                perspective-origin: 0% 50%;
+                perspective: 800px;
+                background: #21212d;
+            }
+            nan,main{
+                transition: transform 150ms ease-out;
+            }
+            nav{
+                z-index: 100;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 16em;
+                background-color: #353441;
+                transform: translateX(-16em);
+            }
+            nav.menu-active{
+                transform: translateX(0);
+            }
+            nav.menu-hover{
+                transform: translateX(-15em);
+            }
+            nav h1{
+                z-index: 100;
+                display: block;
+                position: absolute;
+                top: 0;
+                right: -65px;
+                height: 60px;
+                width: 65px;
+                line-height: 60px;
+                font-size: 0.8em;
+                font-weight: 300;
+                letter-spacing: 1px;
+                color: white;
+                text-transform: uppercase;
+                text-align: center;
+                background-color: #353441;
+                cursor: pointer;
+            }
+            nav h1:hover{
+                color: #353441;
+                background: white;
+            }
+            nav ul{
+                margin: 0;
+                padding: 0;
+            }
+            nav li{
+                display: inline-block;
+                padding: 0 1em;
+                width: 100%;
+                height: 60px;
+                color: #9dc6d1;
+                line-height: 60px;
+                background-color: #353441;
+                transition: all 0.5s ease-in;
+            }
+            nav li:nth-of-type(2n){
+                background-color: #3a3947;
+            }
+            nav li:hover{
+                background: orangered;
+                color: white;
+            }
+            main{
+                z-index: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                display: flex;
+                align-items: center;
+                overflow: hidden;
+                background-image: url(images/4.jpg);
+                transform-origin: 0% 50%;
+                background-size: cover;
+            }
+            main:after{
+                content: '';
+                display: block;
+                position: absolute;
+                z-index: 1;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                top: 0;
+                background: linear-gradient(to right,transparent,rgba(33,33,45,.5));
+                visibility: hidden;
+                opacity: 0;
+                transition: opacity 150ms ease-out,visibility 0s 150ms;
+            }
+            main.menu-active{
+                border-radius: 0.001px;
+                transform: translateX(16em) rotateY(15deg);
+            }
+            main.menu-active:after{
+                visibility: visible;
+                opacity: 1;
+                transition: opacity 150ms ease-out,visibility 0s;
+            }
+            main.menu-hover{
+                border-radius: 0.001px;
+                transform: translateX(1em) rotateY(1deg);
+            }
+            main section{
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                margin: auto;
+                padding: 1em 4em;
+                max-width: 680px;
+                overflow: auto;
+                background-color: rgba(255,255,255,.5);
+            }
+            section h1{
+                font-weight: 800;
+                text-transform: uppercase;
+                font-size: 2em;
+            }
+            section p{
+                display: inline-block;
+                margin: 16px 0;
+            }
+        </style>
     </head>
     <body>
-        <header>
+        <nav class="menu-activea">
+            <h1><img src="images/menu.png"></h1>
+            <ul>
+                <li>Dashboard</li>
+                <li>Languages</li>
+                <li>Community</li>
+                <li>Practice</li>
+                <li>Profile</li>
+                <li>FAQ</li>
+                <li>Contact Us</li>
+            </ul>
+        </nav>
+        <main>
+            <section>
+                <br><br>
+                <br>
+                <h1>&larr; DIAGONAL SHAPED NAV</h1>
+                <br>
+                <p>
+                g8ysonnnnnnnnnnnnnnnnnnnnnnnnnnna87rmhwrrrrrrr797979a,,,,,7haerrrrrrrrrrr7aehfjioae8y7aesbhfaueisbfdesygfdnsygbvesy8wht7gbtirueswthr7ei4btr4ueiwtjr7894etuijr4et79rhebt7jhr79etyhe89yhr789ehyredy8red9
+                </p>
+                <p>
+                g8ysonnnnnnnnnnnnnnnnnnnnnnnnnnna87rmhwrrrrrrr797979a,,,,,7haerrrrrrrrrrr7aehfjioae8y7aesbhfaueisbfdesygfdnsygbvesy8wht7gbtirueswthr7ei4btr4ueiwtjr7894etuijr4et79rhebt7jhr79etyhe89yhr789ehyredy8red9
+                </p>
+            </section>
+        </main>
+        
+        <script>
+            (function(){
+                var nav=$('nav'),
+                    menu=$('nav h1'),
+                    main=$('main'),
+                    open=false,
+                    hover=false;
+                
+                menu.on('click',function(){
+                    opan=!open ? true : false;
+                    nav.toggleClass('menu-active');
+                    main.toggleClass('menu-active');
+                    nav.removeClass('menu-hover');
+                    main.removeClass('menu-hover');
+                    console.log(open);
+                });
+                menu.hover(
+                    function(){
+                        if(!open){
+                            nav.addClass('menu-hover');
+                            nav.removeClass('menu-hover');
+                        }
+                    },function(){
+                        nav.removeClass('menu-hover');
+                        main.removeClass('menu-hover');
+                    }
+                );
+            })();
+        </script>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <header>
             <img src="images/banner5.jfif" class="banner">
             <a href="" class="logo"><img src="images/templogo.png"></a>
             <nav>
@@ -39,6 +259,6 @@
                 $("header").removeClass('scrolled');
             }
         })
-        </script>
+        </script> -->
     </body>
 </html>
