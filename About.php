@@ -1,15 +1,12 @@
 <?php 
- /* session_start(); 
+  session_start(); 
 
-  if (!isset($_SESSION['username'])) {
-  	$_SESSION['msg'] = "You must log in first";
-  	header('location: login.php');
-  }
+
   if (isset($_GET['logout'])) {
   	session_destroy();
   	unset($_SESSION['username']);
-  	header("location: login.php");
-  }*/
+  	//header("location: login.php");
+  }
 ?>
 
 
@@ -26,13 +23,62 @@
     <link rel="stylesheet" href="CSS/style.css">
 
 
+    <style>
+    .button2 {
+        display: inline-block;
+        border-radius: 4px;
+        background-color: #f4511e;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 15px;
+        padding: 10px;
+        width: 100px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+    .button2 span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .button2 span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+    .button2:hover span {
+        padding-right: 25px;
+    }
+
+    .button2:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+    </style>
+
+
 
 
 
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        
+
+
+
+        <?php  if (isset($_SESSION['username'])) : ?>
+
         <div class="container">
             <a class="navbar-brand" href="#">CREATIVO</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -50,22 +96,81 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Portfolio</a>
+                        <a class="nav-link" href="dashboard.php">Dashboard</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="courses.php">Courses</a>
+                        <a class="nav-link" href="courses.php">courses</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.php">Contact</a>
+                    </li>
+                    
+
+                </ul>
+
+            </div>
+
+        </div>
+        <?php endif ?>
+
+
+
+
+        <?php  if (!isset($_SESSION['username'])) : ?>
+
+        <div class="container">
+            <a class="navbar-brand" href="#">CREATIVO</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.php">Home </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="courses.php">courses</a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="contact.php">Contact</a>
                     </li>
 
-
                 </ul>
 
             </div>
         </div>
+        <?php endif ?>
+
+
+
+
+
+
+
+
+        <div id="login">
+            <button class="button2" style="vertical-align:middle"
+                onClick="Javascript:window.location.href = 'login.php';" <?php if (isset($_SESSION['username'])) { ?>
+                style="display: none" <?php } ?>><span>Log In </span></button>
+        </div>
+
+
+        <!--<button class="button2" style="vertical-align:middle"><span>Log In </span></button>-->
+
+        <!--<div>
+            <button class="button2" style="vertical-align:middle"><span>Logout </span></button>
+            </div>-->
+
+
 
 
 
@@ -78,7 +183,7 @@
                 <h3>
                     <?php 
           	echo $_SESSION['success']; 
-          	unset($_SESSION['success']);
+              unset($_SESSION['success']);
           ?>
                 </h3>
             </div>
@@ -86,11 +191,22 @@
 
             <!-- logged in user information -->
             <?php  if (isset($_SESSION['username'])) : ?>
-            <p style="color: white;font-size:15px;">Welcome <strong><?php echo $_SESSION['username']; ?></strong> &nbsp &nbsp <a href="index.php?logout='1'"
-                    style="color: red;"> logout</a></p>
+
+            <script>
+            document.getElementById("login").style.display = "none";
+            </script>
+
+            <p style="color: white;font-size:15px;">Welcome <strong><?php echo $_SESSION['username']; ?></strong> <a
+                    href="index.php?logout='1'">
+                    <div>
+                        <button class="button2" style="vertical-align:middle"><span>Logout </span></button>
+                    </div>
+                </a></p>
+
 
             <?php endif ?>
         </div>
+
 
     </nav>
 

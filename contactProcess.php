@@ -13,7 +13,7 @@ $sql = "INSERT INTO contact (Name,Email,Message)
 VALUES ('$name','$email','$message')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    echo "<script>location.href = 'contact.php';</script>";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

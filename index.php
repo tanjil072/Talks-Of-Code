@@ -1,8 +1,7 @@
 <?php 
   session_start(); 
 
- 
-  
+
   if (isset($_GET['logout'])) {
   	session_destroy();
   	unset($_SESSION['username']);
@@ -18,7 +17,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Responsive design</title>
+    <title>Talks Of Code</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -73,19 +72,11 @@
 
 
 
-
-
-
-
-
-
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         
-
-
 
         <?php  if (isset($_SESSION['username'])) : ?>
 
@@ -218,8 +209,6 @@
         </div>
 
 
-
-
     </nav>
 
 
@@ -312,6 +301,10 @@
         </div>
 
     </div>
+
+
+
+
 
 
     <div class="register">

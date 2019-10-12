@@ -1,15 +1,12 @@
 <?php 
- /* session_start(); 
+  session_start(); 
 
-  if (!isset($_SESSION['username'])) {
-  	$_SESSION['msg'] = "You must log in first";
-  	header('location: login.php');
-  }
+
   if (isset($_GET['logout'])) {
   	session_destroy();
   	unset($_SESSION['username']);
-  	header("location: login.php");
-  }*/
+  	//header("location: login.php");
+  }
 ?>
 
 
@@ -34,6 +31,49 @@
     <link rel="stylesheet" type="text/css" href="CSS/courses_responsive.css">
 
 
+    <style>
+    .button2 {
+        display: inline-block;
+        border-radius: 4px;
+        background-color: #f4511e;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 15px;
+        padding: 10px;
+        width: 100px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+    .button2 span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .button2 span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+    .button2:hover span {
+        padding-right: 25px;
+    }
+
+    .button2:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+    </style>
+
+
 
 
 
@@ -41,6 +81,12 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+
+
+
+
+        <?php  if (isset($_SESSION['username'])) : ?>
+
         <div class="container">
             <a class="navbar-brand" href="#">CREATIVO</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -58,11 +104,11 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Portfolio</a>
+                        <a class="nav-link" href="dashboard.php">Dashboard</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Courses</a>
+                        <a class="nav-link" href="#">courses</a>
                     </li>
 
                     <li class="nav-item">
@@ -73,7 +119,67 @@
                 </ul>
 
             </div>
+
         </div>
+        <?php endif ?>
+
+
+
+
+        <?php  if (!isset($_SESSION['username'])) : ?>
+
+        <div class="container">
+            <a class="navbar-brand" href="#">CREATIVO</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.php">Home </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="About.php">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">courses</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.php">Contact</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+        <?php endif ?>
+
+
+
+
+
+
+
+
+        <div id="login">
+            <button class="button2" style="vertical-align:middle"
+                onClick="Javascript:window.location.href = 'login.php';" <?php if (isset($_SESSION['username'])) { ?>
+                style="display: none" <?php } ?>><span>Log In </span></button>
+        </div>
+
+
+        <!--<button class="button2" style="vertical-align:middle"><span>Log In </span></button>-->
+
+        <!--<div>
+            <button class="button2" style="vertical-align:middle"><span>Logout </span></button>
+            </div>-->
+
+
+
 
 
         <div style="padding-top:20px">
@@ -85,7 +191,7 @@
                 <h3>
                     <?php 
           	echo $_SESSION['success']; 
-          	unset($_SESSION['success']);
+              unset($_SESSION['success']);
           ?>
                 </h3>
             </div>
@@ -93,11 +199,22 @@
 
             <!-- logged in user information -->
             <?php  if (isset($_SESSION['username'])) : ?>
-            <p style="color: white;font-size:15px;">Welcome <strong><?php echo $_SESSION['username']; ?></strong> &nbsp &nbsp <a href="index.php?logout='1'"
-                    style="color: red;"> logout</a></p>
+
+            <script>
+            document.getElementById("login").style.display = "none";
+            </script>
+
+            <p style="color: white;font-size:15px;">Welcome <strong><?php echo $_SESSION['username']; ?></strong> <a
+                    href="index.php?logout='1'">
+                    <div>
+                        <button class="button2" style="vertical-align:middle"><span>Logout </span></button>
+                    </div>
+                </a></p>
+
 
             <?php endif ?>
         </div>
+
 
     </nav>
 
@@ -116,6 +233,21 @@
             <h1>Courses</h1>
         </div>
     </div>
+
+
+<?php
+
+$pdo = new PDO('mysql:host=localhost;dbname=signup', 'root', '');
+
+$q = $pdo->query('select Title,Details from courses');
+$r = $q->fetchAll();
+
+
+echo $r[0]['Title'];
+
+?>
+
+
 
 
 
@@ -140,17 +272,17 @@
                     <div class="card">
                         <img class="card-img-top" src="images/course_1.jpg">
                         <div class="card-body text-center">
-                            <div class="card-title"><a href="courses.html">A complete guide to design</a></div>
-                            <div class="card-text">Adobe Guide, Layes, Smart Objects etc...</div>
+                            <div class="card-title"><a href="courses.html"><?php echo $r[0]['Title']; ?> </a></div>
+                            <div class="card-text"><?php echo $r[0]['Details'];?></div>
                         </div>
-                        <div class="price_box d-flex flex-row align-items-center">
+                        <!--<div class="price_box d-flex flex-row align-items-center">
                             <div class="course_author_image">
                                 <img src="images/author.jpg">
                             </div>
                             <div class="course_author_name">Michael Smith, <span>Author</span></div>
                             <div class="course_price d-flex flex-column align-items-center justify-content-center">
                                 <span>$29</span></div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
 
@@ -159,17 +291,17 @@
                     <div class="card">
                         <img class="card-img-top" src="images/course_2.jpg" alt="https://unsplash.com/@cikstefan">
                         <div class="card-body text-center">
-                            <div class="card-title"><a href="courses.html">Beginners guide to HTML</a></div>
-                            <div class="card-text">Adobe Guide, Layes, Smart Objects etc...</div>
+                            <div class="card-title"><a href="courses.html"><?php echo $r[1]['Title']; ?></a></div>
+                            <div class="card-text"><?php echo $r[1]['Details']; ?></div>
                         </div>
-                        <div class="price_box d-flex flex-row align-items-center">
+                        <!--<div class="price_box d-flex flex-row align-items-center">
                             <div class="course_author_image">
                                 <img src="images/author.jpg" alt="https://unsplash.com/@mehdizadeh">
                             </div>
                             <div class="course_author_name">Michael Smith, <span>Author</span></div>
                             <div class="course_price d-flex flex-column align-items-center justify-content-center">
                                 <span>$29</span></div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
 
@@ -178,17 +310,17 @@
                     <div class="card">
                         <img class="card-img-top" src="images/course_3.jpg" alt="https://unsplash.com/@dsmacinnes">
                         <div class="card-body text-center">
-                            <div class="card-title"><a href="courses.html">Advanced Photoshop</a></div>
-                            <div class="card-text">Adobe Guide, Layes, Smart Objects etc...</div>
+                            <div class="card-title"><a href="courses.html"><?php echo $r[2]['Title']; ?></a></div>
+                            <div class="card-text"><?php echo $r[2]['Details']; ?></div>
                         </div>
-                        <div class="price_box d-flex flex-row align-items-center">
+                        <!--<div class="price_box d-flex flex-row align-items-center">
                             <div class="course_author_image">
                                 <img src="images/author.jpg" alt="https://unsplash.com/@mehdizadeh">
                             </div>
                             <div class="course_author_name">Michael Smith, <span>Author</span></div>
                             <div class="course_price d-flex flex-column align-items-center justify-content-center">
                                 <span>$29</span></div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
 
@@ -197,17 +329,17 @@
                     <div class="card">
                         <img class="card-img-top" src="images/course_4.jpg" alt="https://unsplash.com/@kellitungay">
                         <div class="card-body text-center">
-                            <div class="card-title"><a href="courses.html">A complete guide to design</a></div>
-                            <div class="card-text">Adobe Guide, Layes, Smart Objects etc...</div>
+                            <div class="card-title"><a href="courses.html"><?php echo $r[3]['Title']; ?></a></div>
+                            <div class="card-text"><?php echo $r[3]['Details']; ?></div>
                         </div>
-                        <div class="price_box d-flex flex-row align-items-center">
+                        <!--<div class="price_box d-flex flex-row align-items-center">
                             <div class="course_author_image">
                                 <img src="images/author.jpg" alt="https://unsplash.com/@mehdizadeh">
                             </div>
                             <div class="course_author_name">Michael Smith, <span>Author</span></div>
                             <div class="course_price d-flex flex-column align-items-center justify-content-center">
                                 <span>$29</span></div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
 
@@ -216,17 +348,17 @@
                     <div class="card">
                         <img class="card-img-top" src="images/course_5.jpg" alt="https://unsplash.com/@claybanks1989">
                         <div class="card-body text-center">
-                            <div class="card-title"><a href="courses.html">Beginners guide to HTML</a></div>
-                            <div class="card-text">Adobe Guide, Layes, Smart Objects etc...</div>
+                            <div class="card-title"><a href="courses.html"><?php echo $r[4]['Title']; ?></a></div>
+                            <div class="card-text"><?php echo $r[4]['Details']; ?></div>
                         </div>
-                        <div class="price_box d-flex flex-row align-items-center">
+                        <!--<div class="price_box d-flex flex-row align-items-center">
                             <div class="course_author_image">
                                 <img src="images/author.jpg" alt="https://unsplash.com/@mehdizadeh">
                             </div>
                             <div class="course_author_name">Michael Smith, <span>Author</span></div>
                             <div class="course_price d-flex flex-column align-items-center justify-content-center">
                                 <span>$29</span></div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
 
@@ -235,17 +367,17 @@
                     <div class="card">
                         <img class="card-img-top" src="images/course_6.jpg" alt="https://unsplash.com/@element5digital">
                         <div class="card-body text-center">
-                            <div class="card-title"><a href="courses.html">Advanced Photoshop</a></div>
-                            <div class="card-text">Adobe Guide, Layes, Smart Objects etc...</div>
+                            <div class="card-title"><a href="courses.html"><?php echo $r[5]['Title']; ?></a></div>
+                            <div class="card-text"><?php echo $r[5]['Details']; ?></div>
                         </div>
-                        <div class="price_box d-flex flex-row align-items-center">
+                        <!--<div class="price_box d-flex flex-row align-items-center">
                             <div class="course_author_image">
                                 <img src="images/author.jpg" alt="https://unsplash.com/@mehdizadeh">
                             </div>
                             <div class="course_author_name">Michael Smith, <span>Author</span></div>
                             <div class="course_price d-flex flex-column align-items-center justify-content-center">
                                 <span>$29</span></div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
 
@@ -254,17 +386,17 @@
                     <div class="card">
                         <img class="card-img-top" src="images/course_7.jpg" alt="https://unsplash.com/@gaellemm">
                         <div class="card-body text-center">
-                            <div class="card-title"><a href="courses.html">A complete guide to design</a></div>
-                            <div class="card-text">Adobe Guide, Layes, Smart Objects etc...</div>
+                            <div class="card-title"><a href="courses.html"><?php echo $r[6]['Title']; ?></a></div>
+                            <div class="card-text"><?php echo $r[6]['Details']; ?></div>
                         </div>
-                        <div class="price_box d-flex flex-row align-items-center">
+                       <!-- <div class="price_box d-flex flex-row align-items-center">
                             <div class="course_author_image">
                                 <img src="images/author.jpg" alt="https://unsplash.com/@mehdizadeh">
                             </div>
                             <div class="course_author_name">Michael Smith, <span>Author</span></div>
                             <div class="course_price d-flex flex-column align-items-center justify-content-center">
                                 <span>$29</span></div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
 
@@ -273,17 +405,17 @@
                     <div class="card">
                         <img class="card-img-top" src="images/course_8.jpg" alt="https://unsplash.com/@juanmramosjr">
                         <div class="card-body text-center">
-                            <div class="card-title"><a href="courses.html">Beginners guide to HTML</a></div>
-                            <div class="card-text">Adobe Guide, Layes, Smart Objects etc...</div>
+                            <div class="card-title"><a href="courses.html"><?php echo $r[7]['Title']; ?></a></div>
+                            <div class="card-text"><?php echo $r[7]['Details']; ?></div>
                         </div>
-                        <div class="price_box d-flex flex-row align-items-center">
+                        <!--<div class="price_box d-flex flex-row align-items-center">
                             <div class="course_author_image">
                                 <img src="images/author.jpg" alt="https://unsplash.com/@mehdizadeh">
                             </div>
                             <div class="course_author_name">Michael Smith, <span>Author</span></div>
                             <div class="course_price d-flex flex-column align-items-center justify-content-center">
                                 <span>$29</span></div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
 
@@ -292,17 +424,17 @@
                     <div class="card">
                         <img class="card-img-top" src="images/course_9.jpg" alt="https://unsplash.com/@kimberlyfarmer">
                         <div class="card-body text-center">
-                            <div class="card-title"><a href="courses.html">Advanced Photoshop</a></div>
-                            <div class="card-text">Adobe Guide, Layes, Smart Objects etc...</div>
+                            <div class="card-title"><a href="courses.html"><?php echo $r[8]['Title']; ?></a></div>
+                            <div class="card-text"><?php echo $r[8]['Details']; ?></div>
                         </div>
-                        <div class="price_box d-flex flex-row align-items-center">
+                        <!--<div class="price_box d-flex flex-row align-items-center">
                             <div class="course_author_image">
                                 <img src="images/author.jpg" alt="https://unsplash.com/@mehdizadeh">
                             </div>
                             <div class="course_author_name">Michael Smith, <span>Author</span></div>
                             <div class="course_price d-flex flex-column align-items-center justify-content-center">
                                 <span>$29</span></div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
 
