@@ -106,7 +106,7 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="images/1.jpg" class="d-block w-100" alt="...">
+                <img src="images/banner4.jfif" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 class="animated bounceInRight" style="animation-delay: 1s">Web Development</h5>
                     <p class="animated bounceInLeft" style="animation-delay: 2s">You can learn web development from here
@@ -115,7 +115,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="images/2.jpg" class="d-block w-100" alt="...">
+                <img src="images/banner6.jfif" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 class="animated slideInDown" style="animation-delay: 1s">Web design</h5>
                     <p class="animated fadeInUp" style="animation-delay: 2s">Learn web designing easily</p>
@@ -123,7 +123,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="images/3.jpg" class="d-block w-100" alt="...">
+                <img src="images/banner9.jfif" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 class="animated zoomIn" style="animation-delay: 1s">Digital Marketing</h5>
                     <p class="animated fadeInLeft" style="animation-delay: 2s">Its an eassy way to learn digital
