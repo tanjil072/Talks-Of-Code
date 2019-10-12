@@ -3,7 +3,7 @@
 <html>
 <head>
   <title>Creativo||Login</title>
-  <link rel="stylesheet" type="text/css" href="style1.css">
+  <link rel="stylesheet" type="text/css" href="CSS/style1.css">
 </head>
 <body>
   <div class="header">
