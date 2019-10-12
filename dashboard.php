@@ -1,6 +1,3 @@
-
-
-
 <!doctype html>
 <html>
 
@@ -11,6 +8,19 @@
     <!-- <link rel="stylesheet" href="CSS/styleDashboard.css"> -->
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Pageflip Layout with BookBlock</title>
+    <meta name="description" content="Fullscreen Pageflip Layout with BookBlock" />
+    <meta name="keywords"
+        content="fullscreen pageflip, booklet, layout, bookblock, jquery plugin, flipboard layout, sidebar menu" />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.custom.css" />
+    <link rel="stylesheet" type="text/css" href="css/bookblock.css" />
+    <link rel="stylesheet" type="text/css" href="css/custom.css" />
+    <script src="js/modernizr.custom.79639.js"></script>
 
     <style>
     html,
@@ -187,9 +197,27 @@
             <li>Contact Us</li>
         </ul>
     </nav>
-    
+
+
+
+
+
     <main>
+
+
     </main>
+
+
+
+    
+
+
+
+
+
+
+
+
 
     <script>
     (function() {

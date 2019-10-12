@@ -97,7 +97,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="dashboard.php">Dashboard</a>
+                        <a class="nav-link" href="dboard.php">Dashboard</a>
                     </li>
 
                     <li class="nav-item">
