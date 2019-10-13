@@ -81,7 +81,7 @@
         <?php  if (isset($_SESSION['username'])) : ?>
 
         <div class="container">
-            <a class="navbar-brand" href="#">CREATIVO</a>
+            <a class="navbar-brand" href="#">talksofcode</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -97,7 +97,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="dboard.php">Dashboard</a>
+                        <a class="nav-link" href="dashboard.php">Dashboard</a>
                     </li>
 
                     <li class="nav-item">
@@ -122,7 +122,7 @@
         <?php  if (!isset($_SESSION['username'])) : ?>
 
         <div class="container">
-            <a class="navbar-brand" href="#">CREATIVO</a>
+            <a class="navbar-brand" href="#">talksofcode</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -134,7 +134,7 @@
                         <a class="nav-link" href="#">Home </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="About.php">About</a>
+                        <a class="nav-link" href="aboutus.php">About</a>
                     </li>
 
                     <li class="nav-item">
@@ -221,7 +221,7 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="images/banner4.jfif" class="d-block w-100" alt="...">
+                <img src="images/banner41.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5 class="animated bounceInRight" style="animation-delay: 1s">Web Development</h5>
                     <p class="animated bounceInLeft" style="animation-delay: 2s">You can learn web development from here
@@ -379,8 +379,7 @@
                         <img src="images/earth-globe.svg" alt="">
                     </div>
                     <h3>Online Courses</h3>
-                    <p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc.
-                        Proin quis mi malesuada, finibus tortor fermentum.</p>
+                    <p>Learn to code, develop your programming skills or explore tech trends like digital marketing and big data. Join online tech and coding courses from top experts.</p>
                 </div>
 
                 <div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
@@ -388,8 +387,7 @@
                         <img src="images/exam.svg" alt="">
                     </div>
                     <h3>Indoor Courses</h3>
-                    <p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc.
-                        Proin quis mi malesuada, finibus tortor fermentum.</p>
+                    <p>Join us for a complimentary, comprehensive, indoor training program that is specifically designed for beginners</p>
                 </div>
 
                 <div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
@@ -397,8 +395,7 @@
                         <img src="images/books.svg" alt="">
                     </div>
                     <h3>Amazing Library</h3>
-                    <p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc.
-                        Proin quis mi malesuada, finibus tortor fermentum.</p>
+                    <p>Learn Programming with amazing library resources.</p>
                 </div>
 
                 <div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
@@ -406,8 +403,7 @@
                         <img src="images/professor.svg" alt="">
                     </div>
                     <h3>Exceptional Professors</h3>
-                    <p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc.
-                        Proin quis mi malesuada, finibus tortor fermentum.</p>
+                    <p>Exceptional teachers bring passion for their subject and a love of learning to their classroom.They start out good and keep learning and developing their own knowledge and skills</p>
                 </div>
 
                 <div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
@@ -415,17 +411,15 @@
                         <img src="images/blackboard.svg" alt="">
                     </div>
                     <h3>Top Programs</h3>
-                    <p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc.
-                        Proin quis mi malesuada, finibus tortor fermentum.</p>
+                    <p>Find the best program for your carrier.</p>
                 </div>
 
                 <div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
                     <div class="icon_container d-flex flex-column justify-content-end">
                         <img src="images/mortarboard.svg" alt="">
                     </div>
-                    <h3>Graduate Diploma</h3>
-                    <p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc.
-                        Proin quis mi malesuada, finibus tortor fermentum.</p>
+                    <h3>Certificates</h3>
+                    <p>Get set ready to get a certificate of your course completation.</p>
                 </div>
 
             </div>

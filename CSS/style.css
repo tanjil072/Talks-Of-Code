@@ -546,7 +546,7 @@ section
 	width: 55px;
 	height: 4px;
 	content: '';
-	background: #e2465b;
+	background: #F4511E;
 }
 
 /*********************************
@@ -606,7 +606,7 @@ section
 }
 .register_title	span
 {
-	color: #e2465b;
+	color: #F4511E;
 }
 .register_text
 {
@@ -619,7 +619,7 @@ section
 }
 .register_button
 {
-	background: #e2465b;
+	background: #F4511E;
 	margin-top: 65px;
 }
 .register_button a
@@ -689,7 +689,7 @@ input:last-of-type
 {
 	width: 100%;
 	height: 48px;
-	background: #e2465b;
+	background: #F4511E;
 	color: #FFFFFF;
 	font-size: 14px;
 	text-transform: uppercase;

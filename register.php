@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Creativo||Registration</title>
+  <title>talksofcode</title>
   <link rel="stylesheet" type="text/css" href="CSS/style1.css">
 </head>
 <body>

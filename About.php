@@ -17,7 +17,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Responsive design</title>
+    <title>talksofcode</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="CSS/style.css">
@@ -63,24 +63,100 @@
         opacity: 1;
         right: 0;
     }
+
+
+
+    @import url('https://fonts.googleapis.com/css?family=Allura|Josefin+Sans');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: #2E2B2B;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+
+    .wrapper {
+        margin-top: 100px;
+    }
+
+    .wrapper h1 {
+        font-size: 52px;
+        margin-bottom: 100px;
+        margin-top: 150px;
+        text-align: center;
+
+    }
+
+    .team {
+        display: flex;
+        justify-content: center;
+        width: auto;
+        text-align: center;
+        flex-wrap: wrap;
+    }
+
+    .team .team_member {
+        background: #fff;
+        margin: 25px;
+        margin-bottom: 50px;
+        width: 500px;
+        padding: 20px;
+        line-height: 20px;
+        height: 400px;
+        color: #8e8b8b;
+        position: relative;
+    }
+
+    .team .team_member h3 {
+        color: #81c644;
+        font-size: 26px;
+        margin-top: 50px;
+    }
+
+    .team .team_member p.role {
+        color: #3d3535;
+        margin: 12px 0;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+    .team .team_member .team_img {
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: #fff;
+    }
+
+    .team .team_member .team_img img {
+        width: 90px;
+        height: 90px;
+        padding: 5px;
+        border-radius: 100%;
+    }
     </style>
-
-
-
 
 
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        
 
+    
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
 
 
         <?php  if (isset($_SESSION['username'])) : ?>
 
         <div class="container">
-            <a class="navbar-brand" href="#">CREATIVO</a>
+            <a class="navbar-brand" href="#">talksofcode</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -96,7 +172,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="dboard.php">Dashboard</a>
+                        <a class="nav-link" href="dashboard.php">Dashboard</a>
                     </li>
 
                     <li class="nav-item">
@@ -106,7 +182,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.php">Contact</a>
                     </li>
-                    
+
 
                 </ul>
 
@@ -121,7 +197,7 @@
         <?php  if (!isset($_SESSION['username'])) : ?>
 
         <div class="container">
-            <a class="navbar-brand" href="#">CREATIVO</a>
+            <a class="navbar-brand" href="#">talksofcode</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -151,26 +227,11 @@
         <?php endif ?>
 
 
-
-
-
-
-
-
         <div id="login">
             <button class="button2" style="vertical-align:middle"
                 onClick="Javascript:window.location.href = 'login.php';" <?php if (isset($_SESSION['username'])) { ?>
                 style="display: none" <?php } ?>><span>Log In </span></button>
         </div>
-
-
-        <!--<button class="button2" style="vertical-align:middle"><span>Log In </span></button>-->
-
-        <!--<div>
-            <button class="button2" style="vertical-align:middle"><span>Logout </span></button>
-            </div>-->
-
-
 
 
 
@@ -208,258 +269,46 @@
         </div>
 
 
+
+
+
+
     </nav>
 
 
-
-
-
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="images/1.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5 class="animated bounceInRight" style="animation-delay: 1s">Web Development</h5>
-                    <p class="animated bounceInLeft" style="animation-delay: 2s">You can learn web development from here
-                    </p>
-                    <p class="animated bounceInRight" style="animation-delay: 3s"><a href="#">More Info</a></p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="images/2.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5 class="animated slideInDown" style="animation-delay: 1s">Web design</h5>
-                    <p class="animated fadeInUp" style="animation-delay: 2s">Learn web designing easily</p>
-                    <p class="animated zoomIn" style="animation-delay: 3s"><a href="#">More Info</a></p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="images/3.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5 class="animated zoomIn" style="animation-delay: 1s">Digital Marketing</h5>
-                    <p class="animated fadeInLeft" style="animation-delay: 2s">Its an eassy way to learn digital
-                        marketing</p>
-                    <p class="animated zoomIn" style="animation-delay: 3s"><a href="#">More Info</a></p>
-                </div>
-            </div>
-        </div>
-
-
-
-
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-
-
-
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <div style="margin-top:500px;">
 
     <div class="wrapper">
-
-        <div class="content">
-            <!-- card -->
-            <div class="card">
-
-                <div class="icon"><i class="material-icons md-36">face</i></div>
-                <p class="title">Profile</p>
-                <p class="text">Click to see or edit your profile page.</p>
-
+        <h1 style="color:white; margin-bottom:150px;">Our Team</h1>
+        <div class="team">
+            <div class="team_member">
+                <div class="team_img">
+                    <img src="images/m1.jfif" alt="Team_image">
+                </div>
+                <h3 style="color:#E2465B">Abu Ubaida Akash</h3>
+                <p class="role" style="color: #3d3535;">UI developer</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere
+                    dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos.</p>
             </div>
-            <!-- end card -->
-            <!-- card -->
-            <div class="card">
-
-                <div class="icon"><i class="material-icons md-36">favorite_border</i></div>
-                <p class="title">Favourites</p>
-                <p class="text">Check all your favourites in one place.</p>
-
+            <div class="team_member">
+                <div class="team_img">
+                    <img style="height: 100px;width:100px;"
+                        src="https://cdn.dribbble.com/users/102974/screenshots/2726841/head_bob.gif" alt="Team_image">
+                </div>
+                <h3 style="color:#E2465B">Dewan Tanjil Hossain</h3>
+                <p class="role" style="color: #3d3535;">Tester</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere
+                    dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos.</p>
             </div>
-            <!-- end card -->
-            <!-- card -->
-            <div class="card">
-
-                <div class="icon"><i class="material-icons md-36">alternate_email</i></div>
-                <p class="title">Contacts</p>
-                <p class="text">Add or change your contacts and links.</p>
-
-            </div>
-            <!-- end card -->
 
         </div>
-
     </div>
-
 
     
 
+    </div>
 
 
-   
-    <!-- Footer -->
-
-	<footer class="footer">
-		<div class="container">
-			
-			<!-- Newsletter -->
-
-			<div class="newsletter">
-				<div class="row">
-					<div class="col">
-						<div class="section_title text-center">
-							<h1>Subscribe to newsletter</h1>
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col text-center">
-						<div class="newsletter_form_container mx-auto">
-							<form action="post">
-								<div class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-center">
-									<input id="newsletter_email" class="newsletter_email" type="email" placeholder="Email Address" required="required" data-error="Valid email is required.">
-									<button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit">Subscribe</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-
-            </div>
-            
-
-
-
-			<!-- Footer Content -->
-
-			<div class="footer_content">
-				<div class="row">
-
-					<!-- Footer Column - About -->
-					<div class="col-lg-3 footer_col">
-
-						<!-- Logo -->
-						<div class="logo_container">
-							<div class="logo">
-								<img src="images/logo.png" alt="">
-								<span>course</span>
-							</div>
-						</div>
-
-						<p class="footer_about_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum, tempor lacus.</p>
-
-					</div>
-
-					<!-- Footer Column - Menu -->
-
-					<div class="col-lg-3 footer_col">
-						<div class="footer_column_title">Menu</div>
-						<div class="footer_column_content">
-							<ul>
-								<li class="footer_list_item"><a href="index.php">Home</a></li>
-								<li class="footer_list_item"><a href="#">About Us</a></li>
-								<li class="footer_list_item"><a href="courses.html">Courses</a></li>
-								<li class="footer_list_item"><a href="news.html">News</a></li>
-								<li class="footer_list_item"><a href="contact.html">Contact</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<!-- Footer Column - Usefull Links -->
-
-					<div class="col-lg-3 footer_col">
-						<div class="footer_column_title">Usefull Links</div>
-						<div class="footer_column_content">
-							<ul>
-								<li class="footer_list_item"><a href="#">Testimonials</a></li>
-								<li class="footer_list_item"><a href="#">FAQ</a></li>
-								<li class="footer_list_item"><a href="#">Community</a></li>
-								<li class="footer_list_item"><a href="#">Campus Pictures</a></li>
-								<li class="footer_list_item"><a href="#">Tuitions</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<!-- Footer Column - Contact -->
-
-					<div class="col-lg-3 footer_col">
-						<div class="footer_column_title">Contact</div>
-						<div class="footer_column_content">
-							<ul>
-								<li class="footer_contact_item">
-									<div class="footer_contact_icon">
-										<img src="images/placeholder.svg" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>
-									3450,North Vally,USA
-								</li>
-								<li class="footer_contact_item">
-									<div class="footer_contact_icon">
-										<img src="images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>
-									0034 37483 2445 322
-								</li>
-								<li class="footer_contact_item">
-									<div class="footer_contact_icon">
-										<img src="images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>hello@company.com
-								</li>
-							</ul>
-						</div>
-					</div>
-
-				</div>
-			</div>
-
-
-			<div class="footer_bar d-flex flex-column flex-sm-row align-items-center">
-				
-				<div class="footer_social ml-sm-auto">
-					<ul class="menu_social">
-						<li class="menu_social_item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-						<li class="menu_social_item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-						<li class="menu_social_item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-						<li class="menu_social_item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li class="menu_social_item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-					</ul>
-				</div>
-			</div>
-
-		</div>
-	</footer>
-
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="styles/bootstrap4/popper.js"></script>
-    <script src="styles/bootstrap4/bootstrap.min.js"></script>
-    <script src="plugins/greensock/TweenMax.min.js"></script>
-    <script src="plugins/greensock/TimelineMax.min.js"></script>
-    <script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
-    <script src="plugins/greensock/animation.gsap.min.js"></script>
-    <script src="plugins/greensock/ScrollToPlugin.min.js"></script>
-    <script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-    <script src="plugins/scrollTo/jquery.scrollTo.min.js"></script>
-    <script src="plugins/easing/easing.js"></script>
-    <script src="js/custom.js"></script>
 </body>
 
 

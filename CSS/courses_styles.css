@@ -178,7 +178,7 @@ h6::selection
 }
 .form-control
 {
-	color: #db5246;
+	color: #F4511E;
 }
 section
 {
@@ -662,7 +662,7 @@ section
 	-ms-transform: translateX(-50%);
 	-o-transform: translateX(-50%);
 	transform: translateX(-50%);
-	background: #e2465b;
+	background: #F4511E;
 	padding-top: 24px;
 	padding-bottom: 18px;
 	padding-left: 39px;
@@ -715,7 +715,7 @@ section
 	width: 55px;
 	height: 4px;
 	content: '';
-	background: #e2465b;
+	background: #F4511E;
 
 	
 
@@ -772,7 +772,7 @@ section
 .card
 {
 	display: block;
-	background: #e2465b;
+	background: #F4511E;
 	border: none;
 }
 .card-img-top
@@ -842,7 +842,7 @@ section
 {
 	width: 67px;
 	height: 67px;
-	background: #e2465b;
+	background: #F4511E;
 	margin-left: auto;
 }
 .course_price span
@@ -900,14 +900,14 @@ section
 }
 .newsletter_email:focus
 {
-	outline: solid 2px #e2465b;
+	outline: solid 2px #F4511E;
 }
 .newsletter_submit_btn
 {
 	width: 164px;
 	height: 42px;
 	border: none;
-	background: #e2465b;
+	background: #F4511E;
 	color: #FFFFFF;
 	font-size: 14px;
 	font-weight: 500;
@@ -970,7 +970,7 @@ section
 }
 .footer_list_item a:hover
 {
-	color: #e2465b;
+	color: #F4511E;
 }
 .footer_contact_item
 {
@@ -1012,7 +1012,7 @@ section
 }
 .footer_social .menu_social_item a i:hover
 {
-	color: #e2465b;
+	color: #F4511E;
 }
 .footer_social .menu_social_item:last-child
 {
