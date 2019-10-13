@@ -1,98 +1,233 @@
-body
-{
-    margin: 0;
-    padding: 0;
-    min-height: 1000px;
-    font-family: sans-serif;
-    padding-top: 10px;
-}
-header
-{
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    background: #000;
-    transition: 1s;
-    padding: 0 100px;
-    box-sizing: border-box;
-}
-header.scrolled
-{
-    height: 100%;
+/**
+ * The CSS in this file is for styling the demo page,
+ * Meny's critical styles (such as transforms) are applied
+ * via JavaScript.
+ *
+ * See the documentation here: https://github.com/hakimel/meny#meny
+ *
+ * @author Hakim El Hattab | http://hakim.se
+ */
 
+ * {
+	margin: 0;
+	padding: 0;
 }
-header .logo
-{
-    position: absolute;
-    top: calc(50% - 150px);
-    left: calc(50% - 150px);
-    transition: 1s;
+
+html,
+body {
+	height: 100%;
+	overflow: hidden;
 }
-header.scrolled .logo
-{
-    position: relative;
-    top: 10px;
-    left: 0;
+
+body {
+	background-color: #222;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=);
+	background-repeat: repeat;
+
+	font-family: 'Lato', Helvetica, sans-serif;
+	font-size: 16px;
+	color: #222;
 }
-header img.banner
-{
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    transition: 1s;
+
+a {
+	color: #c2575b;
+	text-decoration: none;
+
+	-webkit-transition: 0.15s color ease;
+	   -moz-transition: 0.15s color ease;
+	    -ms-transition: 0.15s color ease;
+	     -o-transition: 0.15s color ease;
+	        transition: 0.15s color ease;
 }
-header.scrolled img.banner
-{
-    opacity: 0;
+	a:hover {
+		color: #f76f76;
+	}
+
+h1,
+h2 {
+	font-size: 24px;
 }
-header .logo img
-{
-    width: 300px;
-    transition: 1s;
+
+.meny {
+	display: none;
+	padding: 20px;
+	overflow: auto;
+	background: #333;
+	color: #eee;
+
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
 }
-header.scrolled .logo img
-{
-    width: 80px;
+	.meny ul {
+		margin-top: 10px;
+	}
+		.meny ul li {
+			display: inline-block;
+			width: 200px;
+			list-style: none;
+			font-size: 20px;
+			padding: 3px 10px;
+		}
+			.meny ul li:before {
+				content: '-';
+				margin-right: 5px;
+				color: rgba( 255, 255, 255, 0.2 );
+			}
+
+/**
+ * Hint graphic that appears while menu is inactive
+ */
+.meny-arrow {
+	position: absolute;
+	z-index: 10;
+
+	border: 10px solid transparent;
+
+	-webkit-transition: opacity 0.4s ease 0.4s;
+	   -moz-transition: opacity 0.4s ease 0.4s;
+	    -ms-transition: opacity 0.4s ease 0.4s;
+	     -o-transition: opacity 0.4s ease 0.4s;
+	        transition: opacity 0.4s ease 0.4s;
 }
-nav
-{
-    position: relative;
-    float: right;
+	.meny-left .meny-arrow {
+		left: 14px;
+		top: 50%;
+		margin-top: -16px;
+		border-left: 16px solid #333;
+	}
+	.meny-right .meny-arrow {
+		right: 14px;
+		top: 50%;
+		margin-top: -16px;
+		border-right: 16px solid #333;
+	}
+	.meny-top .meny-arrow {
+		left: 50%;
+		top: 14px;
+		margin-left: -16px;
+		border-top: 16px solid #333;
+	}
+	.meny-bottom .meny-arrow {
+		left: 50%;
+		bottom: 14px;
+		margin-left: -16px;
+		border-bottom: 16px solid #333;
+	}
+	.meny-active .meny-arrow {
+		opacity: 0;
+
+		-webkit-transition: opacity 0.2s ease;
+		   -moz-transition: opacity 0.2s ease;
+		    -ms-transition: opacity 0.2s ease;
+		     -o-transition: opacity 0.2s ease;
+		        transition: opacity 0.2s ease;
+	}
+
+/**
+ * Main contents area
+ */
+.contents {
+	background: #eee;
+	padding: 40px 100px;
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+
+	-webkit-overflow-scrolling: touch;
+	-webkit-transform-style: preserve-3d;
+
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
 }
-nav ul
-{
-    position: relative;
+.secdiv{
+	/* background-color: rgb(255, 255, 255);
+	text-align: center;
+    box-shadow: 1px 1px 5px darkgray;
+    width: calc((100% - 180px)/3);
+    float: left;
+    margin-right: 30px;
+    margin-left: 30px; */
+    box-sizing: border-box;
+    margin: 30px;
+    width: calc((100% - 180px)/3);
+    height: 392px;
+    padding: 0;
+    box-shadow: 0 6px 16px 0 rgba(0,0,0,.2);
+    background-color: rgb(255,255,255);
+    float: left;
+}
+.cardsTitle{
+    color: #738f93;
+    margin-bottom: 30px;
+}
+.cardsHeader{
     margin: 0;
-    padding: 40px 0;
+    padding: 30px 30px 20px;
+    border-bottom: 1px solid #e7eeef;
+    color: #738f93;
+    text-transform: uppercase;
+    line-height: 1.4;
+    font-weight: 400;
+    letter-spacing: .6px;
+    font-size: 12px;
+    font-family: var(--font-family-text);
+    outline: 0;
+    vertical-align: baseline;
+}
+.cardsContent{
+    color: #39424e;
+    padding: 30px 30px 20px;
+}
+.languageInfo{
+    font-size: 18px;
+    line-height: 60px;
+    cursor: pointer;
+}
+.trackName{
     display: flex;
-    transition: 1s;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(100px);
+    padding: 0 30px;
+    border-bottom: 1px solid #f3f7f7;
+    color: #39424e;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
 }
-header.scrolled nav ul
-{
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
+tracksRow{
+    display: flex;
+    box-sizing: border-box;
+    margin: -30px;
+    flex-wrap: wrap;
 }
-nav ul li
-{
-    list-style: none;
+.skillsContent{
+    box-sizing: border-box;
+    margin: 30px;
+    width: calc((100% - 120px)/2);
+    position: relative;
 }
-nav ul li a
-{
-    color: #fff;
-    padding: 10px 15px;
-    text-decoration: none ;
-}
-nav ul li a.active
-{
-    background: #fff;
-    color: #262626;
-}
+.skills
+	/* .contents>article {
+		max-width: 400px;
+	}
+	.contents p {
+		margin: 10px 0 10px 0;
+		font-size: 16px;
+		line-height: 1.32;
+	}
+	.contents small {
+		display: block;
+		margin-top: 10px;
+		padding-top: 10px;
+		color: #333;
+		font-size: 0.85em;
+		border-top: 1px dashed #ccc;
+
+		-webkit-text-size-adjust: none;
+	}
+	.contents .sharing {
+		position: absolute;
+		bottom: 20px;
+	} */
+
+

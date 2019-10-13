@@ -37,11 +37,11 @@
 			<h2>More Experiments</h2>
 			<ul>
 				<li>Home</li>
-				<li>Profile</li>
 				<li>Community</li>
+				<li>Profile</li>
 				<li>Contact</li>
 				<li>FAQ</li>
-				<li>Language</li>
+				<li>Contact Us</li>
 				
 			</ul>
 		</div>

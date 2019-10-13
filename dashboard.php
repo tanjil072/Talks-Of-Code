@@ -1,309 +1,176 @@
 <!doctype html>
-<html>
-
-<head>
-    <meta name="viewprot" content="width=device-width,initial-scale=1.0">
-    <meta charset="utf-8">
-    <title>talksofcode</title>
-    <!-- <link rel="stylesheet" href="CSS/styleDashboard.css"> -->
-
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fullscreen Pageflip Layout with BookBlock</title>
-    <meta name="description" content="Fullscreen Pageflip Layout with BookBlock" />
-    <meta name="keywords"
-        content="fullscreen pageflip, booklet, layout, bookblock, jquery plugin, flipboard layout, sidebar menu" />
-    <meta name="author" content="Codrops" />
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.custom.css" />
-    <link rel="stylesheet" type="text/css" href="css/bookblock.css" />
-    <link rel="stylesheet" type="text/css" href="css/custom.css" />
-    <script src="js/modernizr.custom.79639.js"></script>
-
-    <style>
-    html,
-    body {
-        height: 100%;
-    }
-
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
-    body {
-        font-family: tahoma;
-        line-height: 1.7;
-        perspective-origin: 0% 50%;
-        perspective: 800px;
-        background: #21212d;
-    }
-
-    nan,
-    main {
-        transition: transform 150ms ease-out;
-    }
-
-    nav {
-        z-index: 100;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: 16em;
-        background-color: #353441;
-        transform: translateX(-16em);
-    }
-
-    nav.menu-active {
-        transform: translateX(0);
-    }
-
-    nav.menu-hover {
-        transform: translateX(-15em);
-    }
-
-    nav h1 {
-        z-index: 100;
-        display: block;
-        position: absolute;
-        top: 0;
-        right: -65px;
-        height: 60px;
-        width: 65px;
-        line-height: 60px;
-        font-size: 0.8em;
-        font-weight: 300;
-        letter-spacing: 1px;
-        color: white;
-        text-transform: uppercase;
-        text-align: center;
-        background-color: #353441;
-        cursor: pointer;
-    }
-
-    nav h1:hover {
-        color: #353441;
-        background: white;
-    }
-
-    nav ul {
-        margin: 0;
-        padding: 0;
-    }
-
-    nav li {
-        display: inline-block;
-        padding: 0 1em;
-        width: 100%;
-        height: 60px;
-        color: #9dc6d1;
-        line-height: 60px;
-        background-color: #353441;
-        transition: all 0.5s ease-in;
-    }
-
-    nav li:nth-of-type(2n) {
-        background-color: #3a3947;
-    }
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>talksofcode</title>
+
+		<meta name="description" content="A three dimensional and space efficient menu created with JavaScript and CSS 3.">
+		<meta name="author" content="Hakim El Hattab">
+
+		
+
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" href="CSS/styleDashboard.css">
+
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<meta name="description" content="Fullscreen Pageflip Layout with BookBlock" />
+		<meta name="keywords" content="fullscreen pageflip, booklet, layout, bookblock, jquery plugin, flipboard layout, sidebar menu" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico"> 
+		<link rel="stylesheet" type="text/css" href="CSS/jquery.jscrollpane.custom.css" />
+		<link rel="stylesheet" type="text/css" href="CSS/bookblock.css" />
+		<link rel="stylesheet" type="text/css" href="CSS/custom.css" />
+		<script src="js/modernizr.custom.79639.js"></script>
+	</head>
+
+	<body>
+
+		<div class="meny">
+			<h2>More Experiments</h2>
+			<ul>
+				<li>Home</li>
+				<li>Community</li>
+				<li>Profile</li>
+				<li>Contact</li>
+				<li>FAQ</li>
+				<li>Contact Us</li>
+				
+			</ul>
+		</div>
+
+		<div class="meny-arrow"></div>
+
+		<div class="contents">
+            <div class="tracksRow">
+                <div class="skillsContent">
+                    <a href="">
+                        <div class="skillsInner">
+                            
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <h3 class="cardsTitle">Explore Talks-Of-Code Skills</h3>
+            <div class="container selectDiv">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class= "secdiv">
+                            <h5 class="cardsHeader"style="margin-bottom: 20px">Language Proficiency</h5>
+                            <div class="languageInfo">
+                                <div class="trackName"><b>C</b></div>
+                            </div>
+                            <div class="languageInfo">
+                                <div class="trackName"><b>C#</b></div>
+                            </div>
+                            <div class="languageInfo">
+                                <div class="trackName"><b>C++</b></div>
+                            </div>
+                            <div class="languageInfo">
+                                <div class="trackName"><b>Java</b></div>
+                            </div>
+                            <div class="languageInfo">
+                                <div class="trackName"><b>Python</b></div>
+                            </div>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                     <div class= "secdiv">
+                            <h5 class="cardsHeader"style="margin-bottom: 20px">Problem Solving</h5>
+                            <div class="languageInfo">
+                                <div class="trackName"><b>Data Structures</b></div>
+                            </div>
+                            <div class="languageInfo">
+                                <div class="trackName"><b>Algorithms</b></div>
+                            </div>
+                            <div class="languageInfo">
+                                <div class="trackName"><b>Mathemetics</b></div>
+                            </div>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                     <div class= "secdiv">
+                            <h5 class="cardsHeader"style="margin-bottom: 20px">Specialized Skills</h5>
+                            <div class="languageInfo">
+                                <div class="trackName"><b>Artificial Intelligence</b></div>
+                            </div>
+                            <div class="languageInfo">
+                                <div class="trackName"><b>SQL</b></div>
+                            </div>
+                            <div class="languageInfo">
+                                <div class="trackName"><b>Databases</b></div>
+                            </div>
+                            <div class="languageInfo">
+                                <div class="trackName"><b>Regex</b></div>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+            </div>
 
-    nav li:hover {
-        background: orangered;
-        color: white;
-    }
+		</div>
 
-    main {
-        z-index: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-        background-color: #ced5e2;
-        transform-origin: 0% 50%;
-        background-size: cover;
-    }
 
-    main:after {
-        content: '';
-        display: block;
-        position: absolute;
-        z-index: 1;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        top: 0;
-        background: linear-gradient(to right, transparent, rgba(33, 33, 45, .5));
-        visibility: hidden;
-        opacity: 0;
-        transition: opacity 150ms ease-out, visibility 0s 150ms;
-    }
 
-    main.menu-active {
-        border-radius: 0.001px;
-        transform: translateX(16em) rotateY(15deg);
-    }
+			
 
-    main.menu-active:after {
-        visibility: visible;
-        opacity: 1;
-        transition: opacity 150ms ease-out, visibility 0s;
-    }
+		<script src="js/meny.js"></script>
+		<script>
+			// Create an instance of Meny
+			var meny = Meny.create({
+				// The element that will be animated in from off screen
+				menuElement: document.querySelector( '.meny' ),
 
-    main.menu-hover {
-        border-radius: 0.001px;
-        transform: translateX(1em) rotateY(1deg);
-    }
+				// The contents that gets pushed aside while Meny is active
+				contentsElement: document.querySelector( '.contents' ),
 
-    main section {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        margin: auto;
-        padding: 1em 4em;
-        max-width: 1170px;
-        overflow: auto;
-        background-color: rgba(255, 255, 255, .5);
-    }
-    </style>
-</head>
+				// [optional] The alignment of the menu (top/right/bottom/left)
+				position: Meny.getQuery().p || 'left',
 
+				// [optional] The height of the menu (when using top/bottom position)
+				height: 200,
 
+				// [optional] The width of the menu (when using left/right position)
+				width: 260,
 
+				// [optional] Distance from mouse (in pixels) when menu should open
+				threshold: 40,
 
+				// [optional] Use mouse movement to automatically open/close
+				mouse: true,
 
+				// [optional] Use touch swipe events to open/close
+				touch: true
+			});
 
-<body>
+			if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+				var contents = document.querySelector( '.contents' );
+				contents.style.padding = '0px';
+				contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+			}
+		</script>
 
 
-    <nav class="menu-activea">
+		<script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
 
 
-        <h1><img src="images/menu.png"></h1>
-        <ul>
-            <li>Home</li>
-            <li>Community</li>
-            <li>Practice</li>
-            <li>Profile</li>
-            <li>FAQ</li>
-            <li>Contact Us</li>
-        </ul>
-    </nav>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="js/jquery.mousewheel.js"></script>
+		<script src="js/jquery.jscrollpane.min.js"></script>
+		<script src="js/jquerypp.custom.js"></script>
+		<script src="js/jquery.bookblock.js"></script>
+		<script src="js/page.js"></script>
+		<script>
+			$(function() {
 
+				Page.init();
 
+			});
+		</script>
 
-
-
-    <main>
-
-
-    </main>
-
-
-
-    
-
-
-
-
-
-
-
-
-
-    <script>
-    (function() {
-        var nav = $('nav'),
-            menu = $('nav h1'),
-            main = $('main'),
-            open = false,
-            hover = false;
-
-        menu.on('click', function() {
-            opan = !open ? true : false;
-            nav.toggleClass('menu-active');
-            main.toggleClass('menu-active');
-            nav.removeClass('menu-hover');
-            main.removeClass('menu-hover');
-            console.log(open);
-        });
-        menu.hover(
-            function() {
-                if (!open) {
-                    nav.addClass('menu-hover');
-                    nav.removeClass('menu-hover');
-                }
-            },
-            function() {
-                nav.removeClass('menu-hover');
-                main.removeClass('menu-hover');
-            }
-        );
-    })();
-    </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- <header>
-            <img src="images/banner5.jfif" class="banner">
-            <a href="" class="logo"><img src="images/templogo.png"></a>
-            <nav>
-                <ul>
-                    <li><a href="#" class="active">Dashboard</a></li>
-                    <li><a href="#">Languages</a></li>
-                    <li><a href="#">Practice</a></li>
-                    <li><a href="#">Community</a></li>
-                    <li><a href="#">Team</a></li>
-                    <li><a href="#">Profile</a></li>    
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-            </nav>
-        </header>
-        <section>
-            <p>vuyyyyvbgcvyuvghyhvy<br>fdvgbrdfuvndrfgubgidtne<br>uirgfruwhrw9ur789wtgfr8ihrwg89e5rhg90<br></p>
-        </section>
-        <script 
-        src="https://code.jquery.com/jquery-3.4.1.js"
-			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-              crossorigin="anonymous"></script>
-        <script type="text/javascript">
-        $(window).scroll(function(){
-            var scroll =$(window).scrollTop();
-            if(scroll>0){
-                $("header").addClass('scrolled');
-            }
-            else{
-                $("header").removeClass('scrolled');
-            }
-        })
-        </script> -->
-</body>
-
+	</body>
 </html>
