@@ -115,7 +115,7 @@
         display: flex;
         align-items: center;
         overflow: hidden;
-        background-image: url(images/4.jpg);
+        background-color: #ced5e2;
         transform-origin: 0% 50%;
         background-size: cover;
     }
@@ -159,29 +159,11 @@
         right: 0;
         margin: auto;
         padding: 1em 4em;
-        max-width: 680px;
+        max-width: 1170px;
         overflow: auto;
         background-color: rgba(255, 255, 255, .5);
     }
-
-    section h1 {
-        font-weight: 800;
-        text-transform: uppercase;
-        font-size: 2em;
-    }
-
-    section p {
-        display: inline-block;
-        margin: 16px 0;
-    }
     </style>
-
-
-
-  
-
-
-
 </head>
 
 
@@ -197,8 +179,7 @@
 
         <h1><img src="images/menu.png"></h1>
         <ul>
-            <li>Dashboard</li>
-            <li>Languages</li>
+            <li>Home</li>
             <li>Community</li>
             <li>Practice</li>
             <li>Profile</li>
@@ -208,18 +189,6 @@
     </nav>
     
     <main>
-        <section>
-            <br><br>
-            <br>
-            <h1>&larr; DIAGONAL SHAPED NAV</h1>
-            <br>
-            <p>
-                g8ysonnnnnnnnnnnnnnnnnnnnnnnnnnna87rmhwrrrrrrr797979a,,,,,7hathr7ei4btr4ueiwtjr7894etuijr4et79rhebt7jhr79etyhe89yhr789ehyredy8red9
-            </p>
-            <p>
-                g8ysonnnnnnnnnnnnnnnnnnnnnnnnnnna87rmhwrrrrrrr797979a,,,,,7hygbvesy8wht7gbtirueswthr7ei4btr4ueiwtjr7894etuijr4et79rhebt7jhr79etyhe89yhr789ehyredy8red9
-            </p>
-        </section>
     </main>
 
     <script>
