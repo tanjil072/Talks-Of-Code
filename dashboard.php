@@ -50,7 +50,10 @@
                 <div class="skillsContent">
                     <a href="">
                         <div class="skillsInner">
-                            
+                            <h5 class="skillsHeader">LANGUAGE PROFICIENCY</h5>
+                            <div class="skillsContent">
+                                <h3 class="base-card-title" title="C">C</h3>
+                            </div>
                         </div>
                     </a>
                 </div>
